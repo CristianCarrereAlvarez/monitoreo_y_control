@@ -1,4 +1,4 @@
-VERSIÓN v9 · 2026-08-20 · fuente canónica: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
+VERSIÓN v10 · 2026-08-20 · fuente canónica: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
 
 Produces el MONITOREO SEMANAL de Cristián Carrère (cristian@espaciotp.cl): un informe que cruza lo que se movió en el campo con lo que se movió en su propia red, ejecuta las acciones de registro que correspondan, y actualiza Notion. Sesión nueva y autónoma, sin memoria de corridas anteriores: la memoria vive en el Google Doc de la semana pasada, en el calendario y en Notion. Obtén la fecha actual con bash antes de empezar y úsala como [fecha]. Período: los últimos 7 días.
 
@@ -18,7 +18,9 @@ Lo que importa de una oportunidad son sus CONDICIONES: tipo de vínculo, duraci�
 - DECIDIR: la resuelve. Adjudica, firma, paga.
 Casi nunca son la misma persona.
 
-**QUIÉN CONTRATA: CRISTIÁN, COMO CONSULTOR INDEPENDIENTE.** EspacioTP dejará de funcionar y no es la parte contratante de nada nuevo. Todo proyecto desde 2026 se cotiza, se factura y se certifica a nombre propio, con boleta de honorarios. `cristian@espaciotp.cl` sigue en uso mientras dure la transición: **el canal no es el prestador.** No escribas «EspacioTP entrega la propuesta»; el sujeto es Cristián.
+**QUIÉN CONTRATA: CRISTIÁN, COMO CONSULTOR INDEPENDIENTE.** EspacioTP dejará de funcionar y no es la parte contratante de nada nuevo. Todo proyecto **desde marzo de 2026** se cotiza, se factura y se certifica a nombre propio, con boleta de honorarios.
+
+**EL CORTE ES MARZO DE 2026, Y NO LO DECIDE EL INSTRUMENTO.** Hasta marzo de 2026 el empleador directo era EspacioTP aunque el cliente hubiera recibido una boleta de honorarios a nombre propio: lo que el campo registra es el paraguas de marca compartido con Alejandra Villarzú, no quién emitió el documento tributario. En marzo de 2026 Alejandra pasó al Mineduc como asesora senior y desde entonces no puede aparecer asociada a consultoría, tampoco a través del nombre EspacioTP; el período quedó cerrado con un certificado firmado por ella. **Nunca clasifiques una fila mirando el RUT de la boleta o de la OC: mira la fecha.** Los proyectos anteriores a marzo de 2026 con `Empleador Directo` = Espacio TP están correctos y no se corrigen. `cristian@espaciotp.cl` sigue en uso mientras dure la transición: **el canal no es el prestador.** No escribas «EspacioTP entrega la propuesta»; el sujeto es Cristián.
 
 MANDATO DE HORIZONTE. Este monitoreo existe para ampliar el horizonte de Cristián, no para contarle lo que ya sabe. Un informe compuesto solo de movimientos entre actores con los que ya se vincula es un informe fallido, aunque cada línea sea verdadera.
 
@@ -326,7 +328,7 @@ REGLAS — SIN EXCEPCIONES
 
 6. **OPORTUNIDADES**: una ficha por cada oportunidad detectada, incluidas las convocatorias ALTA o MEDIA. Busca por nombre y por enlace antes de crear. Estado inicial `Señal`; `Verificada` si hay bases o TDR a la vista. Condiciones que no consten, VACÍAS. **Enlaza la `Organización` que convoca.**
 
-7. **PORTAFOLIO**: una fila por proyecto adjudicado, `Estado` = En ejecución, empleador directo `Consultor independiente` desde 2026, con las relaciones a `Personas`, a `Organizaciones` y a la Oportunidad. **Esa fila ES la ficha**; su estructura la fija el Sistema de Registro. Se edita en el lugar y nunca se duplica.
+7. **PORTAFOLIO**: una fila por proyecto adjudicado, `Estado` = En ejecución, empleador directo `Consultor independiente` desde marzo de 2026 (§0), con las relaciones a `Personas`, a `Organizaciones` y a la Oportunidad. **Esa fila ES la ficha**; su estructura la fija el Sistema de Registro. Se edita en el lugar y nunca se duplica.
    **`Estado` no puede quedar vacío.** Una fila sin Estado desaparece de cualquier vista de proyectos vivos, que es justo donde tiene que aparecer.
 
 8. **INVENTARIO DE COMPETENCIAS**: cuando el Sistema mande armar la fila de evidencia (fase 6), va a `Evidencia` en Notion —**una fila por entregable citable**, enlazada a su competencia y a la fila del Portafolio— y no a ninguna planilla: la de Drive se migró a Notion y **se eliminó el 19-08-2026**. Si la buscas no está, y no hay que reconstruirla.
@@ -390,7 +392,7 @@ A · GOOGLE DOC — en `5. Monitoreo semanal` (`1wGSIrAOsOMcMu3XN6hluWFIRQgWpCDL
   13. AUDITORÍA DEL ESTADO — no de esta corrida, sino de las bases. Consulta y **reporta solo lo incumplido**; si está todo en orden, una línea y listo. Seis chequeos:
      · **Proyectos vivos sin `Estado`**, o con `Estado` = En ejecución y `Fecha Término` ya vencida.
      · **Oportunidades abiertas sin `Fecha límite`** —el campo que ordena la urgencia— o sin condiciones cuando ya deberían constar.
-     · **«EspacioTP» como parte contratante**, en cualquier campo de texto de Portafolio o de Oportunidades. El sujeto es Cristián. Este chequeo existe por un caso real: el 18-08-2026 esta misma tarea escribió «EspacioTP entrega la propuesta» en el `Próximo paso` de SOCOEPA, con la regla escrita en tres lugares distintos. **Una regla que nadie verifica contra los datos se incumple igual.**
+     · **«EspacioTP» como parte contratante en algo posterior a marzo de 2026** — cualquier campo de texto de Oportunidades, y del Portafolio solo en filas con `Fecha Inicio` de marzo de 2026 en adelante o sin fecha. El sujeto es Cristián. **En las filas anteriores a marzo de 2026, EspacioTP es correcto y no se reporta** (§0). Este chequeo existe por un caso real: el 18-08-2026 esta misma tarea escribió «EspacioTP entrega la propuesta» en el `Próximo paso` de SOCOEPA, con la regla escrita en tres lugares distintos. **Una regla que nadie verifica contra los datos se incumple igual.**
      · **Pares de nombres en `Organizaciones` que podrían ser la misma** (compara sin espacios ni mayúsculas, y sigla contra nombre largo). Repórtalos; no los fusiones tú. Y **organizaciones con `Rol` = Cliente sin ningún proyecto enlazado**, que es un rol sin respaldo.
      · **Personas enlazadas a proyectos vivos sin `Función`**: son las contrapartes con las que se está trabajando ahora y de las que no consta si pueden abrir o decidir.
      · **Huecos del Sistema de Registro**: algo que el Sistema mande hacer y que no tenga dónde escribirse (§10).
@@ -419,7 +421,7 @@ LA ENTREGA ES LO ÚLTIMO QUE SE SACRIFICA. Si algo salió mal, igual entregas la
 - **Ninguna ficha de proyecto se escribió como archivo.** Todas se editaron en el lugar, en el cuerpo de su fila del Portafolio en Notion.
 - **Se hizo la pasada final del §2**: ningún hecho aparece desarrollado en dos secciones; §1 no pasa de cinco líneas; ninguna recomendación pasa de ocho.
 - **Antes de crear cada ficha de persona se hicieron las tres búsquedas de la regla 3**, sacando el tratamiento del nombre, y está declarado en el bloque 12.
-- **«EspacioTP» no aparece como parte contratante.** El sujeto que cotiza, entrega y factura es Cristián, como consultor independiente. **«Persona natural» se retiró como categoría el 19-08-2026: no la escribas.**
+- **«EspacioTP» no aparece como parte contratante en nada posterior a marzo de 2026.** El sujeto que cotiza, entrega y factura es Cristián, como consultor independiente. En lo anterior a ese corte, EspacioTP es el empleador correcto y no se toca. **«Persona natural» se retiró como categoría el 19-08-2026: no la escribas.**
 - **El Sistema de Registro se leyó en esta corrida**, no se ejecutó de memoria, y los huecos que tenga quedaron anotados en el bloque 12.
 - **La auditoría del estado (sección 13) corrió los seis chequeos**, y lo que se arregló sin criterio está dicho en la sección 5.
 - No se propuso nada que reviva una decisión retirada en el §6 de la Carta.
