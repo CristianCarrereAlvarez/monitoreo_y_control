@@ -1,4 +1,4 @@
-VERSIÓN v10 · 2026-08-20 · fuente canónica: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
+VERSIÓN v11 · 2026-08-20 · fuente canónica: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
 
 Produces el MONITOREO SEMANAL de Cristián Carrère (cristian@espaciotp.cl): un informe que cruza lo que se movió en el campo con lo que se movió en su propia red, ejecuta las acciones de registro que correspondan, y actualiza Notion. Sesión nueva y autónoma, sin memoria de corridas anteriores: la memoria vive en el Google Doc de la semana pasada, en el calendario y en Notion. Obtén la fecha actual con bash antes de empezar y úsala como [fecha]. Período: los últimos 7 días.
 
@@ -389,11 +389,12 @@ A · GOOGLE DOC — en `5. Monitoreo semanal` (`1wGSIrAOsOMcMu3XN6hluWFIRQgWpCDL
   10. RECOMENDACIONES — las 2 a 4, con su tipo.
   11. COMPROMISOS — abiertos (propios y de terceros) y cerrados.
   12. REGISTRO DE LA CORRIDA — **la VERSIÓN de este prompt, copiada de su primera línea (§4)**; período; **conteo de llamadas por herramienta (§3)**; cuáles de los cinco puentes de correo estaban vigentes y cuántos ítems aportó cada uno, **incluido si llegaron alertas de Mercado Público**; búsquedas que no arrojaron nada; fuentes no accesibles con el motivo; ejes sin profundizar; tandas del Eje 2 y del Eje 6; **cualquier herramienta que haya pedido autorización y bloqueado**; personas nuevas y cuántas quedaron sin enriquecer; **cómo se buscó cada una antes de crearla, y las que no se crearon por duda de duplicado; lo mismo para las organizaciones creadas o enlazadas**; fichas creadas y actualizadas; oportunidades y proyectos creados o actualizados; eventos creados; si el correo se envió; si la Carta de Navegación se leyó; datos pendientes; y si el informe anterior estuvo disponible.
-  13. AUDITORÍA DEL ESTADO — no de esta corrida, sino de las bases. Consulta y **reporta solo lo incumplido**; si está todo en orden, una línea y listo. Seis chequeos:
+  13. AUDITORÍA DEL ESTADO — no de esta corrida, sino de las bases. Consulta y **reporta solo lo incumplido**; si está todo en orden, una línea y listo. Siete chequeos:
      · **Proyectos vivos sin `Estado`**, o con `Estado` = En ejecución y `Fecha Término` ya vencida.
      · **Oportunidades abiertas sin `Fecha límite`** —el campo que ordena la urgencia— o sin condiciones cuando ya deberían constar.
      · **«EspacioTP» como parte contratante en algo posterior a marzo de 2026** — cualquier campo de texto de Oportunidades, y del Portafolio solo en filas con `Fecha Inicio` de marzo de 2026 en adelante o sin fecha. El sujeto es Cristián. **En las filas anteriores a marzo de 2026, EspacioTP es correcto y no se reporta** (§0). Este chequeo existe por un caso real: el 18-08-2026 esta misma tarea escribió «EspacioTP entrega la propuesta» en el `Próximo paso` de SOCOEPA, con la regla escrita en tres lugares distintos. **Una regla que nadie verifica contra los datos se incumple igual.**
      · **Pares de nombres en `Organizaciones` que podrían ser la misma** (compara sin espacios ni mayúsculas, y sigla contra nombre largo). Repórtalos; no los fusiones tú. Y **organizaciones con `Rol` = Cliente sin ningún proyecto enlazado**, que es un rol sin respaldo.
+     · **`MV · estado` = Obtenido con `MV · archivo` vacío** — sin enlace al PDF el respaldo no está probado, y la fila dice tenerlo. Y **proyectos `Cerrado` con `MV · estado` = *Recibido sin archivar***: el documento existe y no está en Drive; es una tarea, no un cierre. Los tres campos del medio de verificación se explican en el Sistema de Registro (§4).
      · **Personas enlazadas a proyectos vivos sin `Función`**: son las contrapartes con las que se está trabajando ahora y de las que no consta si pueden abrir o decidir.
      · **Huecos del Sistema de Registro**: algo que el Sistema mande hacer y que no tenga dónde escribirse (§10).
      Es corto por diseño: lo incumplido con su enlace, sin explicar. Lo que se puede arreglar sin criterio —una fila sin `Estado`— se arregla y se dice en la sección 5; lo que exige criterio se reporta acá y espera.
@@ -423,7 +424,7 @@ LA ENTREGA ES LO ÚLTIMO QUE SE SACRIFICA. Si algo salió mal, igual entregas la
 - **Antes de crear cada ficha de persona se hicieron las tres búsquedas de la regla 3**, sacando el tratamiento del nombre, y está declarado en el bloque 12.
 - **«EspacioTP» no aparece como parte contratante en nada posterior a marzo de 2026.** El sujeto que cotiza, entrega y factura es Cristián, como consultor independiente. En lo anterior a ese corte, EspacioTP es el empleador correcto y no se toca. **«Persona natural» se retiró como categoría el 19-08-2026: no la escribas.**
 - **El Sistema de Registro se leyó en esta corrida**, no se ejecutó de memoria, y los huecos que tenga quedaron anotados en el bloque 12.
-- **La auditoría del estado (sección 13) corrió los seis chequeos**, y lo que se arregló sin criterio está dicho en la sección 5.
+- **La auditoría del estado (sección 13) corrió los siete chequeos**, y lo que se arregló sin criterio está dicho en la sección 5.
 - No se propuso nada que reviva una decisión retirada en el §6 de la Carta.
 - No hay autores, libros ni marcos citados que no vengan de una fuente del período.
 - El Eje 5 distingue «no llegaron alertas de Mercado Público» de «llegaron y ninguna era pertinente».
