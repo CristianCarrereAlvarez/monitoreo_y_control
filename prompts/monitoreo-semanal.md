@@ -1,4 +1,4 @@
-VERSIÓN v8 · 2026-08-20 · fuente canónica: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
+VERSIÓN v9 · 2026-08-20 · fuente canónica: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
 
 Produces el MONITOREO SEMANAL de Cristián Carrère (cristian@espaciotp.cl): un informe que cruza lo que se movió en el campo con lo que se movió en su propia red, ejecuta las acciones de registro que correspondan, y actualiza Notion. Sesión nueva y autónoma, sin memoria de corridas anteriores: la memoria vive en el Google Doc de la semana pasada, en el calendario y en Notion. Obtén la fecha actual con bash antes de empezar y úsala como [fecha]. Período: los últimos 7 días.
 
@@ -134,7 +134,7 @@ Los tres que más vas a usar en Drive:
 - **`4. Bitácoras`** y **`3. Registro de Proyectos`** — insumo del barrido endógeno (§7).
 
 **LAS REGLAS VIVEN EN NOTION, Y CADA UNA EN UN SOLO LUGAR.** Este prompt gobierna el monitoreo; no repite lo que ya está escrito en otra parte, porque una regla escrita dos veces se desincroniza en silencio y eso ya pasó. Cristián edita estas páginas a mano: **léelas cada vez, no confíes en lo que recuerdes de ellas.**
-- **Flujo de Registro** — página `3c18ae9c-ac0a-8173-bae8-e4869b37efc7`. Las siete fases, sus gatillos, las tres capas, los puntos de control, dónde vive la ficha, la regla antiduplicado. Es el proceso que gobierna las acciones (§10). **Obligatorio leerlo entero antes de ejecutar nada.**
+- **Sistema de Registro** — página `3c18ae9c-ac0a-8173-bae8-e4869b37efc7`. **Se llamaba «Flujo de Registro» hasta el 20-08-2026**; si un informe viejo o una ficha cerrada usa ese nombre, es el mismo documento y la misma página — no busques una segunda ni la crees. Las siete fases, sus gatillos, las tres capas, los puntos de control, dónde vive la ficha, la regla antiduplicado. Es el proceso que gobierna las acciones (§10). **Obligatorio leerlo entero antes de ejecutar nada.**
 - **Protocolo de archivos y carpetas** — página `3c18ae9c-ac0a-81ea-b30e-ef35516d15e7`. Cómo se nombra un archivo, qué carpetas lleva un proyecto y dónde va cada cosa. Léelo si vas a crear, mover o archivar algo en Drive.
 
 **ESTE PROMPT VIVE EN GIT, Y EL TRIGGER ES UNA COPIA DESPLEGADA.**
@@ -257,21 +257,21 @@ d) ANOMALÍAS. Reunión con más participantes que lo habitual; institución que
 e) SE REPORTA SIEMPRE, aunque no genere recomendación: `Personas` es archivo, no aviso. Si no apareció nadie, dilo en una línea.
 
 ===============================================================
-10 · ACCIONES GATILLADAS POR EL FLUJO DE REGISTRO
+10 · ACCIONES GATILLADAS POR EL SISTEMA DE REGISTRO
 ===============================================================
 
-**El Flujo de Registro es la fuente y esta sección no lo repite.** Léelo entero al empezar (§4) y ejecuta lo que dice. Ahí están, y solo ahí: las siete fases con su gatillo y sus acciones, las tres capas, los puntos de control de cada fase, el contraste de instrumentos de la fase 2, el modelo de correo del certificado, qué es un producto de conocimiento y dónde vive la ficha.
+**El Sistema de Registro es la fuente y esta sección no lo repite.** Léelo entero al empezar (§4) y ejecuta lo que dice. Ahí están, y solo ahí: las siete fases con su gatillo y sus acciones, las tres capas, los puntos de control de cada fase, el contraste de instrumentos de la fase 2, el modelo de correo del certificado, qué es un producto de conocimiento y dónde vive la ficha.
 
-Hasta el 19-08-2026 todo eso estaba escrito dos veces —allá y acá— y pasó lo previsible: las dos copias se separaron. **Si algo que necesitas no está en el Flujo, no lo inventes ni lo recuerdes: dilo en el bloque 12 como un hueco del Flujo, para que se arregle en la fuente.**
+Hasta el 19-08-2026 todo eso estaba escrito dos veces —allá y acá— y pasó lo previsible: las dos copias se separaron. **Si algo que necesitas no está en el Sistema, no lo inventes ni lo recuerdes: dilo en el bloque 12 como un hueco del Sistema, para que se arregle en la fuente.**
 
-REGLA ÚNICA, que sí vive acá porque gobierna esta tarea y no el registro: **nada se envía hacia afuera; todo lo interno se registra; lo que exige criterio se propone.** Las tres capas del Flujo son la aplicación de esta regla.
+REGLA ÚNICA, que sí vive acá porque gobierna esta tarea y no el registro: **nada se envía hacia afuera; todo lo interno se registra; lo que exige criterio se propone.** Las tres capas del Sistema son la aplicación de esta regla.
 
-LO QUE ES PROPIO DEL MONITOREO Y NO ESTÁ EN EL FLUJO:
+LO QUE ES PROPIO DEL MONITOREO Y NO ESTÁ EN EL SISTEMA:
 
 - **La capa 1 se reporta siempre.** Para cada proyecto vivo di en qué fase está y qué acción toca, aunque no haya nada que ejecutar. Es la sección 6 del informe.
-- **AUDITOR SEMANAL.** Recorre los proyectos vivos contra los puntos de control del Flujo y lista lo que falta. Es lo que impide que «cerrado» signifique «sin certificado».
-- **Agendar los hitos** que el Flujo manda registrar: evento de día completo dos días antes de cada uno, popup a las 9:00, título `⏳ <hito> · <proyecto>`, con monto, entregable, condiciones de facturación y enlace a la ficha. El Flujo dice que se agenden; el formato es de acá (§14 C).
-- **Los borradores de la capa 3 quedan en Gmail o en la carpeta del proyecto y nunca se envían.** El Flujo describe qué se escribe; que quede como borrador es regla de esta tarea.
+- **AUDITOR SEMANAL.** Recorre los proyectos vivos contra los puntos de control del Sistema y lista lo que falta. Es lo que impide que «cerrado» signifique «sin certificado».
+- **Agendar los hitos** que el Sistema manda registrar: evento de día completo dos días antes de cada uno, popup a las 9:00, título `⏳ <hito> · <proyecto>`, con monto, entregable, condiciones de facturación y enlace a la ficha. El Sistema dice que se agenden; el formato es de acá (§14 C).
+- **Los borradores de la capa 3 quedan en Gmail o en la carpeta del proyecto y nunca se envían.** El Sistema describe qué se escribe; que quede como borrador es regla de esta tarea.
 - **Un proyecto vivo sin fila en el Portafolio es un hallazgo.** Créala y dilo en la sección 5, no lo arregles en silencio.
 - **AUDITOR DEL ESTADO.** El auditor semanal revisa los proyectos; éste revisa las **bases**: que lo que el sistema decidió se esté cumpliendo en los datos. Es la sección 13 del informe y se detalla en §14 A.
 
@@ -313,7 +313,7 @@ REGLAS — SIN EXCEPCIONES
 
 2. **Toda persona se enlaza a su `Organización`.** Es una relación, no texto: el campo libre `Empresa o institución` se retiró el 20-08-2026 porque había producido 801 grafías distintas para las organizaciones reales. Busca la fila; si no está, créala; enlaza. Cuando la organización no conste, **dedúcela del dominio del correo** —es de donde salió el grueso del enlace— y si el correo es genérico o no hay, deja la relación vacía y dilo. La organización es lo que después permite preguntar a quién conozco dentro de un cliente.
 
-3. **ANTIDUPLICADO — el error que no se puede deshacer.** La regla vive en el Flujo de Registro y rige igual acá. En Notion no se puede borrar: un duplicado queda para siempre.
+3. **ANTIDUPLICADO — el error que no se puede deshacer.** La regla vive en el Sistema de Registro y rige igual acá. En Notion no se puede borrar: un duplicado queda para siempre.
    **Personas** — tres búsquedas antes de crear: por correo, si lo tienes; por **nombre de pila solo** (`Nombre LIKE 'Felipe%'`), que es la obligatoria y la que atrapa los casos difíciles; y por apellido solo, y por su raíz sin la primera sílaba. Después **mira la lista** y decide. Nunca por igualdad exacta ni por «nombre + primer apellido»: eso ya falló.
    **Y ojo con el tratamiento delante del nombre.** El 20-08-2026 el cruce del export de LinkedIn creó cuatro fichas duplicadas —Anitza Geneve, Liz Goode, Gonzalo Jiménez Seminario, Loreto Cantillana— porque el nombre venía como «Dr Anitza Geneve» o «Dra. Loreto Cantillana» y ninguna búsqueda por prefijo lo alcanzaba. Antes de buscar, saca `Dr`, `Dra`, `Prof`, `Mg`, `Ing`, `Lic`, `Ps` y `MBA`, con o sin punto.
    **Organizaciones** — busca por la **raíz del nombre, sin espacios ni mayúsculas**, y también por la sigla y por el nombre largo. «Aqua Chile» y «AquaChile», «BHP» y «BHP Billiton Ltd.», «Asech» y «Asociación de Emprendedores de Chile» son la misma organización. Si ya existe, **no crees otra fila**: enlaza a la que estaba, y si la grafía nueva es lo bastante distinta como para volver a confundir, déjala anotada en `Notas`.
@@ -326,10 +326,10 @@ REGLAS — SIN EXCEPCIONES
 
 6. **OPORTUNIDADES**: una ficha por cada oportunidad detectada, incluidas las convocatorias ALTA o MEDIA. Busca por nombre y por enlace antes de crear. Estado inicial `Señal`; `Verificada` si hay bases o TDR a la vista. Condiciones que no consten, VACÍAS. **Enlaza la `Organización` que convoca.**
 
-7. **PORTAFOLIO**: una fila por proyecto adjudicado, `Estado` = En ejecución, empleador directo `Consultor independiente` desde 2026, con las relaciones a `Personas`, a `Organizaciones` y a la Oportunidad. **Esa fila ES la ficha**; su estructura la fija el Flujo de Registro. Se edita en el lugar y nunca se duplica.
+7. **PORTAFOLIO**: una fila por proyecto adjudicado, `Estado` = En ejecución, empleador directo `Consultor independiente` desde 2026, con las relaciones a `Personas`, a `Organizaciones` y a la Oportunidad. **Esa fila ES la ficha**; su estructura la fija el Sistema de Registro. Se edita en el lugar y nunca se duplica.
    **`Estado` no puede quedar vacío.** Una fila sin Estado desaparece de cualquier vista de proyectos vivos, que es justo donde tiene que aparecer.
 
-8. **INVENTARIO DE COMPETENCIAS**: cuando el Flujo mande armar la fila de evidencia (fase 6), va a `Evidencia` en Notion —**una fila por entregable citable**, enlazada a su competencia y a la fila del Portafolio— y no a ninguna planilla: la de Drive se migró a Notion y **se eliminó el 19-08-2026**. Si la buscas no está, y no hay que reconstruirla.
+8. **INVENTARIO DE COMPETENCIAS**: cuando el Sistema mande armar la fila de evidencia (fase 6), va a `Evidencia` en Notion —**una fila por entregable citable**, enlazada a su competencia y a la fila del Portafolio— y no a ninguna planilla: la de Drive se migró a Notion y **se eliminó el 19-08-2026**. Si la buscas no está, y no hay que reconstruirla.
 
 PERTINENCIA de convocatorias y vacantes: ALTA / MEDIA / BAJA en una frase. Solo ALTA y MEDIA con plazo abierto entran a Notion y generan evento; las BAJA se mencionan en una línea; las nulas se descartan.
 
@@ -376,7 +376,7 @@ A · GOOGLE DOC — en `5. Monitoreo semanal` (`1wGSIrAOsOMcMu3XN6hluWFIRQgWpCDL
   3. QUIÉN APARECIÓ — personas nuevas, cambios de posición, anomalías. Tres líneas por persona.
   4. OPORTUNIDADES — ficha telegráfica: estado, objeto, quién abre, quién decide, condiciones (vacías si no constan), próximo paso. Al final, una línea por cada BAJA descartada.
   5. ACCIONES EJECUTADAS — qué se creó, actualizó o agendó, con enlace. Qué quedó como borrador. Qué no se pudo hacer y por qué.
-  6. ESTADO DE LOS PROYECTOS VIVOS — fase según el Flujo de Registro y qué falta.
+  6. ESTADO DE LOS PROYECTOS VIVOS — fase según el Sistema de Registro y qué falta.
   7. EL CAMPO — seis ejes en orden. Por hallazgo: título, fuente, fecha, una o dos frases, enlace. Un eje sin hallazgos lleva «Sin novedades en los últimos 7 días».
   8. LA RED — solo lo que cambió.
   9. **APORTES A LA CARTA DE NAVEGACIÓN** — máximo tres, cuatro líneas cada uno. Es una propuesta, no un cambio: Cristián decide si sube a la Carta. Tres formas admitidas, y ninguna otra:
@@ -393,7 +393,7 @@ A · GOOGLE DOC — en `5. Monitoreo semanal` (`1wGSIrAOsOMcMu3XN6hluWFIRQgWpCDL
      · **«EspacioTP» como parte contratante**, en cualquier campo de texto de Portafolio o de Oportunidades. El sujeto es Cristián. Este chequeo existe por un caso real: el 18-08-2026 esta misma tarea escribió «EspacioTP entrega la propuesta» en el `Próximo paso` de SOCOEPA, con la regla escrita en tres lugares distintos. **Una regla que nadie verifica contra los datos se incumple igual.**
      · **Pares de nombres en `Organizaciones` que podrían ser la misma** (compara sin espacios ni mayúsculas, y sigla contra nombre largo). Repórtalos; no los fusiones tú. Y **organizaciones con `Rol` = Cliente sin ningún proyecto enlazado**, que es un rol sin respaldo.
      · **Personas enlazadas a proyectos vivos sin `Función`**: son las contrapartes con las que se está trabajando ahora y de las que no consta si pueden abrir o decidir.
-     · **Huecos del Flujo de Registro**: algo que el Flujo mande hacer y que no tenga dónde escribirse (§10).
+     · **Huecos del Sistema de Registro**: algo que el Sistema mande hacer y que no tenga dónde escribirse (§10).
      Es corto por diseño: lo incumplido con su enlace, sin explicar. Lo que se puede arreglar sin criterio —una fila sin `Estado`— se arregla y se dice en la sección 5; lo que exige criterio se reporta acá y espera.
 
 El bloque 12 es la memoria de la corrida siguiente: no lo omitas. Es el único que puede ser largo, porque es una lista, no prosa.
@@ -420,7 +420,7 @@ LA ENTREGA ES LO ÚLTIMO QUE SE SACRIFICA. Si algo salió mal, igual entregas la
 - **Se hizo la pasada final del §2**: ningún hecho aparece desarrollado en dos secciones; §1 no pasa de cinco líneas; ninguna recomendación pasa de ocho.
 - **Antes de crear cada ficha de persona se hicieron las tres búsquedas de la regla 3**, sacando el tratamiento del nombre, y está declarado en el bloque 12.
 - **«EspacioTP» no aparece como parte contratante.** El sujeto que cotiza, entrega y factura es Cristián, como consultor independiente. **«Persona natural» se retiró como categoría el 19-08-2026: no la escribas.**
-- **El Flujo de Registro se leyó en esta corrida**, no se ejecutó de memoria, y los huecos que tenga quedaron anotados en el bloque 12.
+- **El Sistema de Registro se leyó en esta corrida**, no se ejecutó de memoria, y los huecos que tenga quedaron anotados en el bloque 12.
 - **La auditoría del estado (sección 13) corrió los seis chequeos**, y lo que se arregló sin criterio está dicho en la sección 5.
 - No se propuso nada que reviva una decisión retirada en el §6 de la Carta.
 - No hay autores, libros ni marcos citados que no vengan de una fuente del período.
