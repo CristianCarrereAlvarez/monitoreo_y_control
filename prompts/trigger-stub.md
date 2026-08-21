@@ -1,7 +1,18 @@
-STUB DEL TRIGGER · v1 · 2026-08-21
-Este archivo es el texto literal que va dentro del trigger `trig_01RTagcd3J82T42seo9C4Kp7`.
-No es el prompt. El prompt es `prompts/monitoreo-semanal.md`, en este mismo repositorio.
-Lo de abajo, desde la línea siguiente hasta el final del archivo, es lo que se pega en el trigger tal cual.
+STUB DEL TRIGGER · v1 · 2026-08-21 · NO DESPLEGADO
+Este archivo es el texto que iría dentro del trigger `trig_01RTagcd3J82T42seo9C4Kp7`,
+en reemplazo del prompt completo. **Hoy no se puede usar.**
+
+Medido el 21-08-2026, disparando ese mismo trigger con un prompt de prueba: la sesión
+que abre la tarea programada NO tiene el conector de GitHub. Los servidores presentes
+son Gmail, Notion, Google Drive, Google Calendar, Spotify, Undermind y
+claude-code-remote; `get_file_contents` no está entre las herramientas. Un stub que
+mandara a leer el repositorio no podría leerlo.
+
+Qué lo desbloquea: habilitar GitHub en los conectores de la Routine, desde la interfaz
+de Routines de claude.ai. Después se repite la prueba y, si da SÍ, se pega lo de abajo.
+
+El prompt sigue siendo `prompts/monitoreo-semanal.md`, en este mismo repositorio.
+Lo de abajo, entre las marcas, es lo que se pegaría en el trigger tal cual.
 
 ---8<--- COPIAR DESDE ACÁ ---8<---
 

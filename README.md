@@ -11,14 +11,16 @@ prompt de la rutina semanal.
 ```
 prompts/
   monitoreo-semanal.md   ← el prompt de la Routine «Monitoreo Semanal»
-  trigger-stub.md        ← lo único que vive dentro del trigger
+  trigger-stub.md        ← el reemplazo del contenido del trigger, aún no desplegable
 ```
 
-`prompts/monitoreo-semanal.md` **es** el prompt que ejecuta la rutina de los
-lunes. No una fuente de la que se saca una copia: el archivo mismo. El trigger
-`trig_01RTagcd3J82T42seo9C4Kp7` no contiene instrucciones — contiene la orden
-de leer este archivo con el conector de GitHub y seguirlo. Ese texto es
-`prompts/trigger-stub.md`, y también está versionado.
+`prompts/monitoreo-semanal.md` es la **fuente canónica** del prompt que ejecuta
+la rutina de los lunes. La copia que corre vive dentro del trigger
+`trig_01RTagcd3J82T42seo9C4Kp7` y es un **despliegue** de este archivo.
+
+`prompts/trigger-stub.md` es el diseño que reemplazaría a esa copia: un texto
+corto que manda a leer el prompt acá con el conector de GitHub. **Todavía no se
+puede usar** — ver más abajo.
 
 **Por qué existe este repositorio.** El prompt tiene ~56 KB, se reescribió
 ocho veces en un solo día, y hasta el 20-08-2026 su única copia vivía dentro
@@ -27,42 +29,63 @@ lo rompía. Eso se acabó.
 
 ---
 
-## Ya no hay dos versiones que sincronizar
+## La regla, que es lo único que impide tener dos versiones
 
-**Un commit en `main` es un despliegue.** No hay segundo paso, no hay copia
-que actualizar, y no existe manera de cambiar lo que corre el lunes sin dejar
-historial. Editar el prompt es editar este archivo.
+**Todo cambio se escribe primero acá, se commitea, y recién entonces se
+despliega al trigger.** Nunca al revés, y nunca solo en uno de los dos.
 
-**Por qué se hizo así el 21-08-2026.** Antes había dos copias y una regla:
-escribir primero acá, commitear, y recién entonces desplegar al trigger. La
-regla era correcta y aun así el 20-08-2026 las dos copias quedaron separadas
-una noche entera —v14 acá, v13 corriendo—, porque un mecanismo que depende de
-acordarse del segundo paso falla el día que alguien no se acuerda. La versión
-correcta de esa regla no era vigilarla mejor: era sacar el segundo paso.
+El orden importa. Un cambio hecho solo en el trigger no deja rastro: no hay
+commit, no hay diff, y la próxima vez que alguien lea este archivo va a creer
+que es lo que está corriendo. Un cambio hecho solo acá no corre.
 
-El trigger quedó reducido a `prompts/trigger-stub.md`, que hace dos cosas:
-manda a leer `prompts/monitoreo-semanal.md` con el conector de GitHub, y dice
-qué hacer si no lo consigue — mandar un correo diciendo que no corrió, y no
-ejecutar nada. Fallar en silencio es peor que fallar.
+## Por qué el trigger todavía no es un stub
 
-**Cambiar el stub sí es un despliegue manual**, porque es lo único que vive
-dentro del trigger. Pasa poquísimo: cambia si se mueve el repositorio, la
-rama o la ruta del archivo. Cuando pase, se escribe primero acá y se pega
-después.
+La regla de arriba tiene un defecto conocido: depende de que alguien se acuerde
+del segundo paso. El 20-08-2026 no se acordó, y las dos copias quedaron
+separadas una noche entera, con v14 acá y v13 corriendo. La corrección obvia es
+sacar el segundo paso: dejar el prompt solo acá y que el trigger no contenga
+instrucciones sino la orden de venir a leerlas con el conector de GitHub. Ese
+texto está escrito, en `prompts/trigger-stub.md`.
+
+**No se puede desplegar todavía, y está medido.** El 21-08-2026 se disparó el
+propio trigger semanal con un prompt de prueba que solo intentaba leer este
+archivo. Respondió:
+
+```
+RESULTADO: NO
+HERRAMIENTA: no disponible
+ERROR: el conector de GitHub no está conectado en esta sesión; get_file_contents
+       no aparece entre las disponibles (servidores MCP presentes: Gmail, Notion,
+       Spotify, Undermind, Google Drive, Google Calendar, claude-code-remote)
+```
+
+La sesión que abre la tarea programada **no tiene GitHub**. Un stub que mandara
+a leer el repositorio produciría cero informes: el propio stub detectaría el
+fallo y mandaría el correo de aviso, que es mejor que colgarse en silencio,
+pero no es un monitoreo.
+
+**Qué lo desbloquea:** habilitar el conector de GitHub en los conectores de la
+Routine, desde la interfaz de Routines de claude.ai. Un trigger creado o
+editado por herramienta solo puede heredar los conectores que tenga la sesión
+que lo edita, y esta no tiene GitHub para pasar. Cuando esté habilitado, se
+vuelve a correr la misma prueba y, si da SÍ, se pega el stub.
 
 ### Qué versión corrió
 
 La primera línea del prompt declara la versión:
 
 ```
-VERSIÓN v15 · 2026-08-21 · única copia: ...
+VERSIÓN v16 · 2026-08-21 · fuente canónica: ...
 ```
 
-El prompt obliga a copiarla en el bloque 12 del informe semanal, junto con el
-SHA del archivo cuando el conector lo entrega. Ya no sirve para detectar
-divergencia —no puede haberla— sino para saber, leyendo el Doc de un lunes
-cualquiera, exactamente qué texto produjo ese informe. Al subir un cambio,
-sube el número de versión y la fecha de esa primera línea.
+El prompt obliga a copiarla en el bloque 12 del informe semanal. Entonces el
+chequeo es trivial y no requiere abrir el trigger:
+
+> ¿la versión que declara el Doc del lunes es la misma que la del último commit
+> de este archivo?
+
+Si no coincide, alguien editó una copia y no la otra. Al subir un cambio, sube
+el número de versión y la fecha de esa primera línea.
 
 ## Qué NO está acá, y dónde está
 
@@ -85,9 +108,9 @@ mismas. **No se copian acá.**
 
 ## Historial
 
-- **v15 · 2026-08-21** — el prompt deja de tener dos copias. El trigger pasa a
-  ser un stub que va a buscarlo acá con el conector de GitHub; se agrega
-  `prompts/trigger-stub.md`. Decisión de Cristián.
+- **v16 · 2026-08-21** — deja escrito, en el §4 y en el §3, que la sesión del
+  trigger no tiene el conector de GitHub, medido ese día sobre el propio
+  trigger. v15 había dado por hecho lo contrario y quedó sin desplegar.
 - v9–v14 · 2026-08-20 — ver `git log`.
 - **v8 · 2026-08-20** — primera versión versionada. Corrige cinco valores de
   `Fuerza del vínculo` y `Tipo de vínculo` que el prompt nombraba y que no
