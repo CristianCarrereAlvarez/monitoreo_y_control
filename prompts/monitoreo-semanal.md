@@ -1,4 +1,4 @@
-VERSIÓN v14 · 2026-08-20 · fuente canónica: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
+VERSIÓN v15 · 2026-08-21 · única copia: github.com/CristianCarrereAlvarez/monitoreo_y_control · prompts/monitoreo-semanal.md
 
 Produces el MONITOREO SEMANAL de Cristián Carrère (cristian@espaciotp.cl): un informe que cruza lo que se movió en el campo con lo que se movió en su propia red, ejecuta las acciones de registro que correspondan, y actualiza Notion. Sesión nueva y autónoma, sin memoria de corridas anteriores: la memoria vive en el Google Doc de la semana pasada, en el calendario y en Notion. Obtén la fecha actual con bash antes de empezar y úsala como [fecha]. Período: los últimos 7 días.
 
@@ -107,7 +107,7 @@ UNA FUENTE QUE NO RESPONDE NO DETIENE LA CORRIDA. Anótalo en el bloque 12 y sig
 
 SI ALGUNA HERRAMIENTA TE PIDE AUTORIZACIÓN Y SE QUEDA ESPERANDO: no insistas, abandona esa vía, sigue con lo demás y déjalo escrito en el bloque 12 con el nombre de la herramienta.
 
-Gmail, Calendar, Drive y Notion se usan con normalidad: sus conectores no piden autorización.
+Gmail, Calendar, Drive, Notion y GitHub se usan con normalidad: sus conectores no piden autorización. **El conector de GitHub no es WebFetch**: lee el repositorio directamente, y es como llegaste a este archivo (§4).
 
 ===============================================================
 4 · DÓNDE ESTÁ TODO
@@ -139,10 +139,10 @@ Los tres que más vas a usar en Drive:
 - **Sistema de Registro** — página `3c18ae9c-ac0a-8173-bae8-e4869b37efc7`. **Se llamaba «Flujo de Registro» hasta el 20-08-2026**; si un informe viejo o una ficha cerrada usa ese nombre, es el mismo documento y la misma página — no busques una segunda ni la crees. Las siete fases, sus gatillos, las tres capas, los puntos de control, dónde vive la ficha, la regla antiduplicado. Es el proceso que gobierna las acciones (§10). **Obligatorio leerlo entero antes de ejecutar nada.**
 - **Protocolo de archivos y carpetas** — página `3c18ae9c-ac0a-81ea-b30e-ef35516d15e7`. Cómo se nombra un archivo, qué carpetas lleva un proyecto y dónde va cada cosa. Léelo si vas a crear, mover o archivar algo en Drive.
 
-**ESTE PROMPT VIVE EN GIT, Y EL TRIGGER ES UNA COPIA DESPLEGADA.**
-Fuente canónica: `github.com/CristianCarrereAlvarez/monitoreo_y_control`, archivo `prompts/monitoreo-semanal.md`.
-La regla, que existe para que no haya dos versiones divergiendo en silencio: **todo cambio se escribe primero en el archivo del repositorio, se commitea, y recién entonces se despliega al trigger.** Nunca al revés, y nunca solo en uno de los dos. Un cambio hecho solo en el trigger se pierde del historial y no hay a qué volver si rompe la corrida.
-El bloque 12 debe declarar la VERSIÓN que aparece en la primera línea de este prompt. Así el Doc semanal deja constancia de qué versión corrió, y basta compararla con el último commit del repositorio para ver si las dos copias se separaron.
+**ESTE PROMPT VIVE EN GIT, Y ESTA ES SU ÚNICA COPIA.**
+`github.com/CristianCarrereAlvarez/monitoreo_y_control`, rama `main`, archivo `prompts/monitoreo-semanal.md`. Lo estás leyendo porque el trigger no contiene instrucciones: contiene la orden de venir a buscarlas acá, con el conector de GitHub. Ese texto también está versionado, en `prompts/trigger-stub.md`.
+**Hasta el 21-08-2026 había dos copias** —esta y una pegada dentro del trigger— con la regla de escribir primero acá y desplegar después. La regla funcionaba y aun así el 20-08-2026 las dos copias quedaron separadas una noche entera, con v14 en el repositorio y v13 corriendo. Un mecanismo que depende de acordarse de hacer el segundo paso falla el día que alguien no se acuerda. Ahora no hay segundo paso: **un cambio commiteado en `main` es un cambio desplegado**, y no existe manera de editar lo que corre sin dejar historial.
+El bloque 12 debe declarar la VERSIÓN de la primera línea de este archivo, y el SHA si la herramienta lo entregó. Ya no sirve para detectar divergencia —no puede haberla— sino para saber, leyendo el Doc de un lunes cualquiera, exactamente qué texto produjo ese informe.
 
 Fuera de esta unidad:
 - Unidad compartida **Operaciones** — drive root `0AN7vMH3UzJ2VUk9PVA`. La estructura de carpetas y las reglas de nombre las fija el **Protocolo de archivos y carpetas**, no este prompt. Para el barrido basta con que las minutas están en «3. Operación» y que hay que **EXCLUIR «Minutas Analíticas»**: son análisis de documentos, no de conversaciones. **Ahí van los documentos del proyecto —OC, contratos, TDR, entregables—, pero NO la ficha.**
@@ -440,6 +440,6 @@ LA ENTREGA ES LO ÚLTIMO QUE SE SACRIFICA. Si algo salió mal, igual entregas la
 - Todo correo etiquetado «Monitoreo» fue leído, y la bandeja recibió la pasada con ojo exógeno.
 - Los seis ejes recibieron su cobertura mínima.
 - Cada ítem del campo tiene fecha verificada o la marca [fecha no visible en la fuente].
-- **El bloque 12 declara la versión de este prompt**, para que se pueda contrastar con el último commit del repositorio (§4).
+- **El bloque 12 declara la versión de este prompt**, copiada de su primera línea, y el SHA del archivo si la herramienta lo entregó (§4).
 - Los valores escritos en `Fuerza del vínculo` y `Tipo de vínculo` son de la lista exacta del §12; no se inventó ninguno.
 - No se envió ninguna notificación push.
